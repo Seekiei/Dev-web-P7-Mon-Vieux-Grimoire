@@ -7,8 +7,8 @@ const MIME_TYPES = { // je définit un objet MIME_TYPES qui contient les types M
 };
 
 const storage = multer.diskStorage({ // utilisation de la fonction de multer diskStorage() pour enregistrer les fichiers sur le disk
-  destination: (req, file, callback) => { // la fonction destination indique que les fichiers doivent être stockés dans le dossier images
-    callback(null, 'images');
+  destination: (req, file, callback) => { 
+    callback(null, 'images'); // la fonction destination indique que les fichiers doivent être stockés dans le dossier images
   },
   filename: (req, file, callback) => { // Dans la fonction filename,je crée un nom unique pour chaque fichier
     const name = file.originalname.split(' ').join('_'); // remplaçant les espaces dans le nom d'origine par des underscores 
